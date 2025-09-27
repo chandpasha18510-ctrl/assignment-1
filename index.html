@@ -1,194 +1,296 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
-    <title>Assignment</title>
-    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-<style>
-  .badge-inprogress {
-  background: #e0f3ff;
-  color: #0077c8;
-  font-weight: 600;
-}
-.badge-new {
-  background: #f6e6ff;
-  color: #8c2fbd;
-  font-weight: 600;
-}
-.badge-completed {
-  background: #e7f9ef;
-  color: #1b8a4a;
-  font-weight: 600;
-}
 
-#radio1 { accent-color: #0077c8; }   /* in progress (blue) */
-#radio2 { accent-color: #8c2fbd; }   /* new (purple) */
-#radio3 { accent-color: #1b8a4a; }   /* completed (green) */
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+  <title>Assignment</title>
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    .badge-inprogress {
+      background: #e0f3ff;
+      color: #0077c8;
+      font-weight: 600;
+    }
 
-.card-task {
-  min-height: 150px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 1rem;
-}
-.card-top-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-.form-check-input {
-  transform: scale(1.05);
-  margin-top: 0.15rem;
-}
-.card-gap {
-  height: 1.25rem;
-}
+    .badge-new {
+      background: #f6e6ff;
+      color: #8c2fbd;
+      font-weight: 600;
+    }
 
-/* Navbar_styling */
-.navbar-nav .nav-link {
-  font-size: 1.1rem;     
-  margin-right: 1.5rem;
-  font-weight: 600;
-   color: grey !important;
-}
+    .badge-completed {
+      background: #e7f9ef;
+      color: #1b8a4a;
+      font-weight: 600;
+    }
 
-.navbar-nav .nav-link:hover {
-  color: green !important;
-}
+    #radio1 {
+      accent-color: #0077c8;
+    }
 
-.navbar-nav {
-  margin-left: 2rem; 
-}
+    /* in progress (blue) */
+    #radio2 {
+      accent-color: #8c2fbd;
+    }
 
-.shift-left {
-  margin-left: 36px;
-}
+    /* new (purple) */
+    #radio3 {
+      accent-color: #1b8a4a;
+    }
 
-.task-management {
-  max-width: 980px;
-}
+    /* completed (green) */
 
+    .card-task {
+      min-height: 150px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 1rem;
+    }
 
-</style>
+    .card-top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .form-check-input {
+      transform: scale(1.05);
+      margin-top: 0.15rem;
+    }
+
+    .card-gap {
+      height: 1.25rem;
+    }
+
+    /* Navbar_styling */
+    .navbar-nav .nav-link {
+      font-size: 1.1rem;
+      margin-right: 1.5rem;
+      font-weight: 600;
+      color: grey !important;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: green !important;
+    }
+
+    .navbar-nav {
+      margin-left: 2rem;
+    }
+
+    .shift-left {
+      margin-left: 36px;
+    }
+
+    .task-management {
+      max-width: 980px;
+    }
+  </style>
 </head>
-  <body class="p-3 m-0 border-0 bd-example m-0 border-0">
-    <!-- Example Code Start-->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+
+<body class="p-3 m-0 border-0 bd-example m-0 border-0">
+  <!-- Example Code Start-->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Overview</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Activity</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Today's Line-up</a>
+
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search project" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+        <button class="btn btn-primary profile-toggle-btn" type="button" data-bs-toggle="offcanvas"
+          data-bs-target="#profileOffcanvas" aria-controls="profileOffcanvas">
+          Profile
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Overview</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Activity</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link"href="#">Today's Line-up</a>
-            
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-              </ul>
-            </li>
-          
-          </ul>
-          <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search project" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
+      </div>
+    </div>
+  </nav>
+
+  <div class="card text-white mt-5 ms-5" style="height:174px; width:60rem; background-color:#1E7A8C;">
+
+
+    <div class="card-body">
+      <div class="row align-items-start">
+        <div class="col-4">
+          <img src="img1.png" class="card-img-top" alt="..." style="position: relative;width: 206px;top: -70px;">
+        </div>
+        <div class="col-8">
+          <h5 class="card-title">Welcome Gregg!!</h5>
+          <p class="card-text"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed eum accusantium adipisci
+            dicta, hic voluptatem ipsam illum soluta dolorem quae assumenda perferendis quaerat eveniet, sapiente
+            provident odio quas? Ut, possimus!</p>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="container mt-5 shift-left task-management">
+    <h3 class="mb-4">Task Management</h3>
+
+    <div class="row g-4">
+
+      <!-- Card 1 -->
+      <div class="col-md-4">
+        <div class="card card-task shadow-sm">
+          <div class="card-top-row">
+            <h5 class="mb-0">378 Task</h5>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="taskStatus" id="radio1" />
+              <label class="form-check-label visually-hidden" for="radio1">Select In Progress</label>
+            </div>
+          </div>
+          <div class="card-gap"></div>
+          <div class="d-flex justify-content-between align-items-center">
+            <span class="badge badge-inprogress px-3 py-2">In Progress</span>
+            <strong>50%</strong>
+          </div>
         </div>
       </div>
-    </nav>
 
-<div class="card text-white mt-5 ms-5" style="height:174px; width:60rem; background-color:#1E7A8C;">
- 
- 
-  <div class="card-body">
-     <div class="row align-items-start">
-    <div class="col-4" >
-       <img src="img1.png"  class="card-img-top" alt="..." style="position: relative;width: 206px;top: -70px;">
-    </div>
-    <div class="col-8">
-         <h5 class="card-title">Welcome Gregg!!</h5>
-    <p class="card-text"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed eum accusantium adipisci dicta, hic voluptatem ipsam illum soluta dolorem quae assumenda perferendis quaerat eveniet, sapiente provident odio quas? Ut, possimus!</p>
- 
-    </div>
+      <!-- Card 2 -->
+      <div class="col-md-4">
+        <div class="card card-task shadow-sm">
+          <div class="card-top-row">
+            <h5 class="mb-0">100 Task</h5>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="taskStatus" id="radio2" />
+              <label class="form-check-label visually-hidden" for="radio2">Select New Added</label>
+            </div>
+          </div>
+          <div class="card-gap"></div>
+          <div class="d-flex justify-content-between align-items-center">
+            <span class="badge badge-new px-3 py-2">New Added</span>
+            <strong>20%</strong>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-md-4">
+        <div class="card card-task shadow-sm">
+          <div class="card-top-row">
+            <h5 class="mb-0">50 Task</h5>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="taskStatus" id="radio3" />
+              <label class="form-check-label visually-hidden" for="radio3">Select Completed</label>
+            </div>
+          </div>
+          <div class="card-gap"></div>
+          <div class="d-flex justify-content-between align-items-center">
+            <span class="badge badge-completed px-3 py-2">Completed</span>
+            <strong>80%</strong>
+          </div>
+        </div>
+      </div>
+
+      
+<!-- Profile Section -->
+<div class="col-lg-4">
     
-  </div>
-  </div>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="profileOffcanvas" aria-labelledby="profileOffcanvasLabel">
+        
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title fw-bold" id="profileOffcanvasLabel">My Profile</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+
+        <div class="offcanvas-body p-lg-0">
+            <div id="profileCard" class="card p-4 shadow-sm border-0" style="border-radius: 12px;"> 
+                
+                <div class="d-none d-lg-flex justify-content-between align-items-center mb-2">
+                    <h4 class="fw-bold mb-0">My Profile</h4>
+                    <i class="fa-regular fa-circle-question text-secondary"></i>
+                </div>
+
+                <p class="text-center profile-status">
+                    <span class="text-success fw-bold">50%</span> Profile is completed. <a href="#">Ask us</a>
+                </p>
+
+                <div class="text-center">
+                    <div class="profile-img-container shadow-md">
+                        <img src="https://placehold.co/100x100/9618b1/white?text=EH" onerror="this.src='https://placehold.co/100x100/9618b1/white?text=EH';" alt="Profile Avatar" class="profile-img">
+                    </div>
+                    <h5 class="mt-3 mb-0 fw-bold">Elizabet Hurley</h5>
+                    <p class="text-secondary small">UI Designer - DBoat Designs</p>
+                </div>
+
+                <hr class="my-4">
+
+                <div class="mb-3">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h5 class="fw-bold mb-0">Reminders</h5>
+                        <i class="fa-regular fa-bell text-secondary"></i>
+                    </div>
+
+                    <div class="reminder-item">
+                        <div class="reminder-icon icon-call">
+                            <i class="fa-solid fa-phone-volume"></i>
+                        </div>
+                        <div>
+                            <div class="reminder-text">Call with James | Mobile Dev</div>
+                            <div class="small d-flex align-items-center text-secondary">
+                                <i class="fa-regular fa-clock me-1" style="font-size: 0.75rem;"></i>
+                                9:00 PM
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reminder-item">
+                        <div class="reminder-icon icon-skype">
+                            <i class="fa-brands fa-skype"></i>
+                        </div>
+                        <div>
+                            <div class="reminder-text">Skype with Kory | UI</div>
+                            <div class="small d-flex align-items-center text-secondary">
+                                <i class="fa-regular fa-clock me-1" style="font-size: 0.75rem;"></i>
+                                9:00 PM
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+    <!-- End Profile Container -->
+
+</div>
+</div>
 </div>
 
-<div class="container mt-5 shift-left task-management">
-  <h3 class="mb-4">Task Management</h3>
 
-  <div class="row g-4">
-
-    <!-- Card 1 -->
-    <div class="col-md-4">
-      <div class="card card-task shadow-sm">
-        <div class="card-top-row">
-          <h5 class="mb-0">378 Task</h5>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="taskStatus" id="radio1" />
-            <label class="form-check-label visually-hidden" for="radio1">Select In Progress</label>
-          </div>
-        </div>
-        <div class="card-gap"></div>
-        <div class="d-flex justify-content-between align-items-center">
-          <span class="badge badge-inprogress px-3 py-2">In Progress</span>
-          <strong>50%</strong>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 2 -->
-    <div class="col-md-4">
-      <div class="card card-task shadow-sm">
-        <div class="card-top-row">
-          <h5 class="mb-0">100 Task</h5>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="taskStatus" id="radio2" />
-            <label class="form-check-label visually-hidden" for="radio2">Select New Added</label>
-          </div>
-        </div>
-        <div class="card-gap"></div>
-        <div class="d-flex justify-content-between align-items-center">
-          <span class="badge badge-new px-3 py-2">New Added</span>
-          <strong>20%</strong>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 3 -->
-    <div class="col-md-4">
-      <div class="card card-task shadow-sm">
-        <div class="card-top-row">
-          <h5 class="mb-0">50 Task</h5>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="taskStatus" id="radio3" />
-            <label class="form-check-label visually-hidden" for="radio3">Select Completed</label>
-          </div>
-        </div>
-        <div class="card-gap"></div>
-        <div class="d-flex justify-content-between align-items-center">
-          <span class="badge badge-completed px-3 py-2">Completed</span>
-          <strong>80%</strong>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</div>
     <!-- Example Code End -->
-  </body>
+</body>
+
 </html>
